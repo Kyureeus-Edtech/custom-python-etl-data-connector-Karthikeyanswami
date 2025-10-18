@@ -91,31 +91,37 @@ THREATFOX_API=https://threatfox-api.abuse.ch/api/v1/
 - Each document includes an ingestion timestamp field for tracking updates
 - Data insertion uses bulk operations for performance efficiency
 
+
 ## Prerequisites
 Before running this ETL pipeline, ensure you have:
-  Python 3.8+ installed
-  MongoDB (local or remote instance) running and accessible
-  Abusech Authenticatoon key
-  Git (optional, for cloning the repository)
-  pip (Python package installer, included with Python)
+- **Python 3.8+** installed  
+- **MongoDB** (local or remote instance) running and accessible  
+- **Get your authentication API key**  
+  - Retrieve your API key from your account settings  
+- **Git** (optional, for cloning the repository)  
+- **pip** (Python package installer, included with Python)  
 
-🧰 Installation & Setup
-Create a virtual environment (recommended):
-     python -m venv venv
+## Installation & Setup
 
-Activate the virtual environment:
-     Windows (PowerShell): .\venv\Scripts\Activate.ps1
-     macOS/Linux: source venv/bin/activate
+1. Create a virtual environment (recommended): <br>
+&nbsp; &nbsp;&nbsp;&nbsp;python -m venv venv
 
-Install dependencies:
-     pip install -r requirements.txt
+2. Activate the virtual environment: <br>
+   &nbsp; &nbsp;&nbsp;&nbsp;Windows (PowerShell): .\venv\Scripts\Activate.ps1 <br>
+    &nbsp; &nbsp;&nbsp;&nbsp;macOS/Linux: source venv/bin/activate
 
-Set up the .env file: Create a file named .env in the project root with the following content(s):
-     ABUSECH_API_KEY=<YOUR_AUTH_KEY>
-     MONGO_URL=<YOUR_MONGO_URL>
-     MONGO_DB=<YOUR_MONGO_DB>
-     MONGO_COLLECTION= <YOUR_MONGO_COLLECTION>
-     ABUSECH_API_KEY=<YOUR_AUTH_KEY>
+3. Install dependencies: <br>
+    &nbsp; &nbsp;&nbsp;&nbsp;pip install -r requirements.txt
 
-Run the ETL pipeline:
-     python main.py
+4. Set up the .env file: Create a file named .env in the project root with the following content: <br>
+    &nbsp; &nbsp;&nbsp;&nbsp;ABUSECH_API_KEY=<YOUR_AUTH_KEY> <br>
+    &nbsp; &nbsp;&nbsp;&nbsp;MONGO_URL=<YOUR_MONGO_URL> <br>
+    &nbsp; &nbsp;&nbsp;&nbsp;MONGO_DB=<YOUR_MONGO_DB><br>
+    &nbsp; &nbsp;&nbsp;&nbsp;MONGO_COLLECTION= <YOUR_MONGO_COLLECTION> <br>
+    &nbsp; &nbsp;&nbsp;&nbsp;ABUSECH_API_KEY=<YOUR_AUTH_KEY> <br>
+    &nbsp; &nbsp;&nbsp;&nbsp;MALWAREBAZAAR_API=https://mb-api.abuse.ch/api/v1/ <br>
+    &nbsp; &nbsp;&nbsp;&nbsp;URLHAUS_API=https://urlhaus.abuse.ch/downloads/json_recent/ <br>
+    &nbsp; &nbsp;&nbsp;&nbsp;THREATFOX_API=https://threatfox-api.abuse.ch/api/v1/ <br>
+
+5. Run the ETL pipeline: <br>
+    &nbsp; &nbsp;&nbsp;&nbsp;python main.py
